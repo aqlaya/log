@@ -2,7 +2,7 @@ CC=g++
 CXX_STANDART=c++17 
 CFLAGS=-std=$(CXX_STANDART) -Wall -g -O3
 PATH_BIN=./bin
-CONNECT_DYN_LIB=-L$(PATH_BIN) -Wl,-rpath,$(PATH_BIN) -llog 
+CONNECT_DYN_LIB=-L$(PATH_BIN) -Wl,-rpath,. -llog 
 PATH_LIB=./lib
 PATH_SRC=./src
 
