@@ -23,7 +23,7 @@ Unit_log это класс содержащий одно сообшение сф
     make build_dyn_lib
 Тажке изменить флаги сборки можно зайдя в ./Makefile и изменив перменную CFLAGS.
 
-Запус Приложения
+Запуск Приложения
 Пример:
     cd ./bin
     ./main.out WARNING /path_to_file/file.txt
