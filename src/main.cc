@@ -75,11 +75,14 @@ int main(int args, char **argv) {
 	std::cout << "Write Status Message (for default remain empty string):"
 		  << std::endl;
 	std::getline(std::cin, status);
-
+	    
+	status = status.empty() ? "NOTICE" : status;
+	     	
 	std::cout << "Write Message:" << std::endl;
 
 	std::getline(std::cin, message);
 	logging::UnitLog unit_log;
+	    
 	// не кидаем std::terminate при ошибки создания, а продолжаем 
 	try {
 	    // создания единицы логирования
