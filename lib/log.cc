@@ -1,6 +1,9 @@
 #include "log.hpp"
 
-namespace logging { logging::Log::Log(fs::path &&namefile, logging::status status ) { if (namefile.has_filename() && fs::exists(namefile) &&
+namespace logging { 
+
+logging::Log::Log(fs::path &&namefile, logging::status status ) { 
+	if (namefile.has_filename() && fs::exists(namefile) &&
 	check_is_owner_write(namefile)) {
 	    this->stat = status;
         this->file = std::fstream(std::move(namefile), std::ios::app);
@@ -11,7 +14,7 @@ namespace logging { logging::Log::Log(fs::path &&namefile, logging::status statu
     } else {
 	    throw std::logic_error("Not filename path");
     }
-}
+
 
 void logging::Log::note_to_logfile(const logging::UnitLog& obj ) const {
     if (obj.status < stat) return;
